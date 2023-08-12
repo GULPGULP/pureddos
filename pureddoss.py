@@ -27,9 +27,9 @@ elif sys.platform == "win32":
     os.system("cls")
 
 
-print ("\033[1;32m")
-url = raw_input("          URL:  ").strip()
-print ("\033[1;m")
+print("\033[1;32m")
+url = input("          URL:  ").strip()
+print("\033[1;m")
 
 count = 0
 headers = []
